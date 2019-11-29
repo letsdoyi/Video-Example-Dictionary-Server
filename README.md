@@ -54,7 +54,7 @@ npm start
 
 ## Tech Skills
 
-### Client Side
+### Client Side [[Click to Client Side]](https://github.com/letsdoyi/getSample-Client)
 
 - JavaScript (ES2015+)
 
@@ -73,7 +73,7 @@ npm start
 - Sass, stylesheet
 
 
-### Server Side [[Click to Server Side]](https://github.com/letsdoyi/getSample-Server)
+### Server Side
 
 - Node.js
 

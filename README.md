@@ -73,7 +73,7 @@ npm start
 - Sass, stylesheet
 
 
-### Server Side
+### Server Side [[Click to Server Side]](https://github.com/letsdoyi/getSample-Server)
 
 - Node.js
 

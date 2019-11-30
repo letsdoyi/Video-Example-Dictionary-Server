@@ -202,7 +202,7 @@ CLIENT_URL = http://localhost:3001
 
 ## Things To do
 
-- [ ] Practice scheduling task
+- [ ] Adding auto scrolling to the highlight caption
 
 - [ ] Improving search speed
 

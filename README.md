@@ -122,6 +122,7 @@ npm start
   In this application, an open module named Youtube Captions Scraper is used. However, because it mainly designed fetching captions about one video, in this application the module didn't work perfectly. while finding captions of videos, if fetching video captions is not available, my search word API processing stopped. Therefore, in case of no video caption, I caught the module error by using a try/catch statement and continuously skip to the next video id.
 
 - Video timed transcript Sync Implement
+
   The implementation of captions synced to a video player was challenging. It solved with Redux and Youtube API. I changed a state at the begin and end of timed-text caption by Youtube iframe API and highlighted relevant caption section checking timed text if in between the times. About moving playtime to the time of clicked caption, when the same caption was clicked, the player was not moving to the start time because of not rerendering with the same state value. So, whenever the same caption was clicked, I changed state value as +0.001 or -0.001. I could understand about Redux and React deeply through these challenges.
 
 ## Things To do

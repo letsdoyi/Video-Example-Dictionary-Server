@@ -58,6 +58,7 @@ cd getSample-Server
 
 mkdir config
 cd config
+
 touch google.json
 open google.json // Copy and paste the code below in this file
 
@@ -87,7 +88,7 @@ npm start
 
 ```
 
-`google.json`
+### `google.json`
 ```
 {
   "web": {
@@ -102,7 +103,7 @@ npm start
 }
 
 ```
-`keys.js`
+### `keys.js`
 
 ```
 module.exports = {
@@ -119,7 +120,7 @@ module.exports = {
 };
 ```
 
-`.env`
+### `.env`
 
 ```
 MONGOOSE_URL = <YOUR MONGO_DB CONNECTION URL>

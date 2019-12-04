@@ -20,8 +20,8 @@ router.get(
 );
 
 router.get('/google/login/success', (req, res, next) => {
-  console.log('로그인 호출!');
-  console.log('유저', req.user);
+  console.log('Call LOGIN!');
+  console.log('User', req.user);
   if (req.user) {
     res.status(200).json({
       result: 'login success',
@@ -33,8 +33,8 @@ router.get('/google/login/success', (req, res, next) => {
 });
 
 router.get('/google/logout', (req, res) => {
-  console.log('로그아웃 호출!');
-  console.log('logout 전 user', req.user);
+  console.log('Call LOGOUT!');
+  console.log('User before LOGOUT', req.user);
   req.logout();
   res.redirect(CLIENT_URL);
 });

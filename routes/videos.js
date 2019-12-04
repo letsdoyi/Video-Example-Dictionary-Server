@@ -4,8 +4,9 @@ const { getTenVideoSubtitlesFromLocalBy } = require('../lib/youtube');
 
 let word, videosInfo, pageIndex, categories, language;
 
-router.post('/', async (req, res, next) => {
-  console.log('비디오 검색 요청', req.body.selected);
+router.post('/:searchDetails', async (req, res, next) => {
+  console.log('REQUEST video-search', req.body.selected);
+  console.log('URL:', req.params);
   if (!req.body.selected.pageIndex) {
     pageIndex = 0;
   } else {
@@ -17,14 +18,14 @@ router.post('/', async (req, res, next) => {
 });
 
 router.get('/success', async (req, res, next) => {
-  console.log('video success router 실행');
+  console.log('Running video success router');
   videosInfo = await getTenVideoSubtitlesFromLocalBy(
     pageIndex,
     word,
     categories,
     language,
   );
-  console.log(videosInfo, word, 'success라우터 videoInfo');
+  console.log(videosInfo, word, 'success Router videoInfo');
   if (videosInfo) {
     res.status(200).json({
       result: 'ok',

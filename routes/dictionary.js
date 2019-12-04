@@ -4,7 +4,7 @@ const { requestToWordsAPI } = require('../lib/dictionary');
 
 router.post('/', async (req, res, next) => {
   try {
-    console.log('사전 검색 요청 단어:', req.body.word);
+    console.log('Requested word to Dictionary:', req.body.word);
     const word = req.body.word;
     let dictionary = await requestToWordsAPI(word);
     dictionary = dictionary.data;

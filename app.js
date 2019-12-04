@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 const path = require('path');
 const keys = require('./config/keys');
 const cookieParser = require('cookie-parser');
-// const logger = require('morgan');
 
 // Connect Dotenv
 if (process.env.NODE_ENV === 'development') {
@@ -25,7 +24,8 @@ const app = express();
 mongoose.connect(process.env.MONGOOSE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useCreateIndex: true,
 });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -41,35 +41,31 @@ app.set('view engine', 'jade');
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
-    keys: [keys.session.cookieKey],
-  }),
+    keys: [keys.cookie.session],
+  })
 );
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   session({
-    secret: 'cats',
+    secret: keys.session.secret,
     resave: true,
     saveUninitialized: true,
-  }),
+  })
 );
 console.log('session실행중');
 app.use(
   cors({
-    origin: 'http://localhost:3000', // allow to server to accept request from different origin
+    origin: process.env.CLIENT_URL, // allow to server to accept request from different origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // allow session cookie from browser to pass through
-  }),
+  })
 );
 app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
 
 const passport = require('./lib/passport')(app);
 const youtube = require('./lib/youtube');
 
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
-
 
 // Routes
 app.use('/', require('./routes/index'));

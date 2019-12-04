@@ -8,9 +8,11 @@ const mongoose = require('mongoose');
 const path = require('path');
 const keys = require('./config/keys');
 const cookieParser = require('cookie-parser');
+const { CLIENT_URL } = require('./constants');
 
 // Connect Dotenv
 if (process.env.NODE_ENV === 'development') {
+  console.log('** Development Mode **');
   const dotenv = require('dotenv');
   dotenv.config({
     path: './.env',
@@ -55,7 +57,11 @@ app.use(
 console.log('session실행중');
 app.use(
   cors({
-    origin: process.env.CLIENT_URL, // allow to server to accept request from different origin
+    origin: `${
+      process.env.NODE_ENV === 'development'
+        ? CLIENT_URL.DEVELOPMENT
+        : CLIENT_URL.PRODUCTION
+    }`, // allow to server to accept request from different origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // allow session cookie from browser to pass through
   })

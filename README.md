@@ -27,27 +27,35 @@ This application provides native speakers' language usages by YouTube videos.
 ## Prerequisites
 
 Get a Google OAuth 2.0 client ID
+
 - Go to the [Google API Console](https://console.developers.google.com/)
 - Create OAuth 2.0 client ID [[how to link]](https://developers.google.com/identity/protocols/OAuth2)
 - Copy and paste redirect url in google.json file codes
 - Get `<YOUR CLIENT ID>` and `<YOUR CLIENT SECRETE>`
 
 Get a Google API Key
+
 - Go to the [Google API Console](https://console.developers.google.com/)
 - Create API KEY [[how to link]](https://developers.google.com/identity/protocols/OAuth2)
 - Get a `<YOUR GOOGLE API KEY>`
 
 Get a RapidAPI API Key
+
 - Go to the [RapidAPI](https://rapidapi.com/)
 - Add new App
 - Get an Application Key, `<YOUR X_RAPID API KEY>` in Security tab
 
 Get a MongoDB Connection URL
+
 - Go to the [MongoDB Atlas](https://cloud.mongodb.com/)
 - Select Connect Your Application
 - Get a Connection String URI, `<YOUR MONGO_DB CONNECTION URL>`
 
 ## Installation
+
+- Download or clone files from github
+- Set environment variables
+- Install modules
 
 ```
 // Server
@@ -55,15 +63,6 @@ Get a MongoDB Connection URL
 git clone https://github.com/letsdoyi/getSample-Server.git
 
 cd getSample-Server
-
-mkdir config
-cd config
-
-touch google.json
-open google.json // Copy and paste the code below in this file
-
-touch keys.js
-open keys.js // Copy and paste the code below in this file
 
 touch .env
 open .env // Copy and paste the code below in this file
@@ -88,43 +87,19 @@ npm start
 
 ```
 
-### `google.json`
-```
-{
-  "web": {
-    "client_id": <YOUR CLIENT ID>`,
-    "project_id": "video-example-dictionary",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_secret": <YOUR CLIENT SECRETE>,
-    "redirect_uris": ["http://localhost:4000/api/auth/google/callback"]
-  }
-}
-
-```
-### `keys.js`
-
-```
-module.exports = {
-  google: {
-    apiKey: <YOUR GOOGLE API KEY>,
-  },
-  session: {
-    cookieKey: <YOUR RANDOM STRING>,
-  },
-
-  X_Rapid: {
-    apiKey: <YOUR X_RAPID API KEY>
-  }
-};
-```
-
 ### `.env`
 
 ```
 MONGOOSE_URL = <YOUR MONGO_DB CONNECTION URL>
-CLIENT_URL = http://localhost:3001
+CLIENT_URL = http://localhost:3000
+COOKIE_SESSION = <YOUR RANDOM STRING>
+SESSION_SECRET = <YOUR RANDOM STRING>
+
+X_RAPID_APIKEY = <YOUR X_RAPID API KEY>
+
+GOOGLE_APIKEY = <YOUR GOOGLE API KEY>
+GOOGLE_WEB_CLIENT_ID = <YOUR CLIENT ID>
+GOOGLE_WEB_CLIENT_SECRET = <YOUR CLIENT SECRETE>
 ```
 
 ## Tech Skills
@@ -147,8 +122,7 @@ CLIENT_URL = http://localhost:3001
 
 - Sass, stylesheet
 
-
-### Server Side
+### Server Side [[Click to Client Side]](https://github.com/letsdoyi/getSample-Server)
 
 - Node.js
 
@@ -160,23 +134,17 @@ CLIENT_URL = http://localhost:3001
 
 - Proxy, for client-server integration
 
-
-
 ## Test
 
 - Jest and Enzyme for Unit test
 
 - Cypress, JavaScript End-to-End testing framework
 
-
-
 ## Version and Schedule Control
 
 - Git, Github [[Previous Git Commit Records Link]](https://github.com/letsdoyi/getSample_git-records)
 
 - Trello for managing scheluled tasks
-
-
 
 ## Challenges
 

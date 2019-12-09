@@ -54,7 +54,7 @@ app.use(
     saveUninitialized: true,
   })
 );
-console.log('session실행중');
+
 app.use(
   cors({
     origin: `${

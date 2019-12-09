@@ -3,11 +3,16 @@ const router = express.Router();
 const passport = require('passport');
 const { CLIENT_URL, GOOGLE_API_SCOPE } = require('../constants');
 
+const clientURL =
+  process.env.NODE_ENV === 'development'
+    ? CLIENT_URL.DEVELOPMENT
+    : CLIENT_URL.PRODUCTION;
+
 router.get(
   '/google',
   passport.authenticate('google', {
     scope: [GOOGLE_API_SCOPE.PLUS],
-  }),
+  })
 );
 
 router.get(
@@ -15,8 +20,8 @@ router.get(
   passport.authenticate('google'),
   (req, res, next) => {
     console.log(req.user);
-    res.redirect(CLIENT_URL);
-  },
+    res.redirect(clientURL);
+  }
 );
 
 router.get('/google/login/success', (req, res, next) => {
@@ -27,7 +32,7 @@ router.get('/google/login/success', (req, res, next) => {
       result: 'login success',
       user: req.user,
     });
-  } else{
+  } else {
     res.status(204);
   }
 });
@@ -36,7 +41,7 @@ router.get('/google/logout', (req, res) => {
   console.log('Call LOGOUT!');
   console.log('User before LOGOUT', req.user);
   req.logout();
-  res.redirect(CLIENT_URL);
+  res.redirect(clientURL);
 });
 
 module.exports = router;

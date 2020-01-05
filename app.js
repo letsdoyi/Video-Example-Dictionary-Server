@@ -1,3 +1,6 @@
+// Connect Dotenv
+require('dotenv').config();
+
 const createError = require('http-errors');
 const express = require('express');
 const cors = require('cors');
@@ -9,9 +12,6 @@ const path = require('path');
 const keys = require('./config/keys');
 const cookieParser = require('cookie-parser');
 const { CLIENT_URL } = require('./constants');
-
-// Connect Dotenv
-require('dotenv').config();
 
 // Create server
 const app = express();

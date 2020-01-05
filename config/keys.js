@@ -1,10 +1,5 @@
 // Connect Dotenv
-if (process.env.NODE_ENV === 'development') {
-  const dotenv = require('dotenv');
-  dotenv.config({
-    path: './.env',
-  });
-}
+require('dotenv').config();
 
 module.exports = {
   google: {

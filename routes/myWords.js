@@ -36,7 +36,7 @@ router.delete('/', async (req, res, next) => {
 
     res.status(200).json({
       result: 'ok',
-      message: `my_words is successfully deleted.`,
+      message: `${userDoc.my_words[word]} is successfully deleted.`,
     });
   } catch (err) {
     throw new Error(err);

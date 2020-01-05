@@ -9,7 +9,7 @@ const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
-const keys = require('./config/keys');
+// const keys = require('./config/keys');
 const cookieParser = require('cookie-parser');
 const { CLIENT_URL } = require('./constants');
 
@@ -37,13 +37,13 @@ app.set('view engine', 'jade');
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
-    keys: [keys.cookie.session],
+    keys: [process.env.COOKIE_SESSION],
   })
 );
 app.use(bodyParser.json());
 app.use(
   session({
-    secret: keys.session.secret,
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true,
   })

@@ -13,17 +13,14 @@ const { CLIENT_URL } = require('./constants');
 // Connect Dotenv
 if (process.env.NODE_ENV === 'development') {
   console.log('** Development Mode **');
-  const dotenv = require('dotenv');
-  dotenv.config({
-    path: './.env',
-  });
+  require('dotenv').config();
 }
 
 // Create server
 const app = express();
 
 // Connect Mongoose
-mongoose.connect(process.env.MONGOOSE_URL, {
+mongoose.connect('mongodb+srv://doyi:1234@cluster0-v0pka.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

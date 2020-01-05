@@ -6,26 +6,25 @@ const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
-const keys = require('./config/keys');
 const cookieParser = require('cookie-parser');
 const { CLIENT_URL } = require('./constants');
 
 // Connect Dotenv
-if (process.env.NODE_ENV === 'development') {
-  console.log('** Development Mode **');
-  require('dotenv').config();
-}
+require('dotenv').config();
 
 // Create server
 const app = express();
 
 // Connect Mongoose
-mongoose.connect('mongodb+srv://doyi:1234@cluster0-v0pka.mongodb.net/test?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-});
+mongoose.connect(
+  process.env.MONGOOSE_URL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+  }
+);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -40,13 +39,13 @@ app.set('view engine', 'jade');
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
-    keys: [keys.cookie.session],
+    keys: [process.env.COOKIE_SESSION],
   })
 );
 app.use(bodyParser.json());
 app.use(
   session({
-    secret: keys.session.secret,
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true,
   })

@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Install NPM Dependencies
           command: |
-            sudo npm install --unsafe-perm
+            sudo npm install --dotenv-extended
       - run:
           name: Run test
           command: |

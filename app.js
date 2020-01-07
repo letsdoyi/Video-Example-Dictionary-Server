@@ -51,7 +51,7 @@ app.use(
 
 app.use(
   cors({
-    origin: '*', // allow to server to accept request from different origin
+    origin: 'https://getsample.letsdoyi.com', // allow to server to accept request from different origin
     // origin: `${
     //   process.env.NODE_ENV === 'development'
     //     ? CLIENT_URL.DEVELOPMENT

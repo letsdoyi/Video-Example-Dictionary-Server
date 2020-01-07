@@ -51,12 +51,11 @@ app.use(
 
 app.use(
   cors({
-    origin: 'https://getsample.letsdoyi.com', // allow to server to accept request from different origin
-    // origin: `${
-    //   process.env.NODE_ENV === 'development'
-    //     ? CLIENT_URL.DEVELOPMENT
-    //     : CLIENT_URL.PRODUCTION
-    // }`, // allow to server to accept request from different origin
+    origin: `${
+      process.env.NODE_ENV === 'development'
+        ? CLIENT_URL.DEVELOPMENT
+        : CLIENT_URL.PRODUCTION
+    }`, // allow to server to accept request from different origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // allow session cookie from browser to pass through
   })

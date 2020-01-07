@@ -1,7 +1,7 @@
 module.exports = {
   CLIENT_URL: {
-    PRODUCTION: 'https://getsample.netlify.com',
-    DEVELOPMENT: 'http://localhost:3000'
+    DEVELOPMENT: 'http://localhost:3000',
+    PRODUCTION: 'https://getsample.letsdoyi.com',
   },
   GOOGLE_API_SCOPE: {
     PLUS: 'https://www.googleapis.com/auth/plus.login',

@@ -16,6 +16,19 @@ const { CLIENT_URL } = require('./constants');
 // Create server
 const app = express();
 
+// Set cors
+app.use(
+  cors({
+    origin: `${
+      process.env.NODE_ENV === 'development'
+        ? CLIENT_URL.DEVELOPMENT
+        : CLIENT_URL.PRODUCTION
+    }`, // allow to server to accept request from different origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // allow session cookie from browser to pass through
+  })
+);
+
 // Connect Mongoose
 mongoose.connect(process.env.MONGOOSE_URL, {
   useNewUrlParser: true,
@@ -49,17 +62,7 @@ app.use(
   })
 );
 
-app.use(
-  cors({
-    origin: `${
-      process.env.NODE_ENV === 'development'
-        ? CLIENT_URL.DEVELOPMENT
-        : CLIENT_URL.PRODUCTION
-    }`, // allow to server to accept request from different origin
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // allow session cookie from browser to pass through
-  })
-);
+
 app.use(express.json());
 
 const passport = require('./lib/passport')(app);

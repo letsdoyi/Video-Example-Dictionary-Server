@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getTenVideoSubtitlesFromLocalBy } = require('../lib/youtube');
-const { CLIENT_URL } = require('./constants');
+const { CLIENT_URL } = require('../constants');
 
 let word, videosInfo, pageIndex, categories, language;
 

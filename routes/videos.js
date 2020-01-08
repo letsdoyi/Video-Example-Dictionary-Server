@@ -16,6 +16,8 @@ router.post('/:searchDetails', async (req, res, next) => {
   categories = req.body.selected.categories;
   language = req.body.selected.language;
   word = req.body.selected.word;
+  res.header('Access-Control-Allow-Origin', CLIENT_URL);
+  res.status(200);
 });
 
 router.get('/success', async (req, res, next) => {
@@ -24,7 +26,7 @@ router.get('/success', async (req, res, next) => {
     pageIndex,
     word,
     categories,
-    language,
+    language
   );
   console.log(videosInfo, word, 'success Router videoInfo');
   if (videosInfo) {

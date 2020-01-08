@@ -27,6 +27,7 @@ router.get('/success', async (req, res, next) => {
   );
   console.log(videosInfo, word, 'success Router videoInfo');
   if (videosInfo) {
+    res.header('Access-Control-Allow-Origin', '*');
     res.status(200).json({
       result: 'ok',
       searched: {

@@ -9,7 +9,6 @@ const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
-// const keys = require('./config/keys');
 const cookieParser = require('cookie-parser');
 const { CLIENT_URL } = require('./constants');
 

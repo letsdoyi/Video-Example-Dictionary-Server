@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getTenVideoSubtitlesFromLocalBy } = require('../lib/youtube');
+const { CLIENT_URL } = require('./constants');
 
 let word, videosInfo, pageIndex, categories, language;
 
@@ -27,7 +28,7 @@ router.get('/success', async (req, res, next) => {
   );
   console.log(videosInfo, word, 'success Router videoInfo');
   if (videosInfo) {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', CLIENT_URL);
     res.status(200).json({
       result: 'ok',
       searched: {

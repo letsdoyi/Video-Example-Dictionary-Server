@@ -24,22 +24,26 @@ router.post('/:searchDetails', async (req, res, next) => {
 
 router.get('/success', async (req, res, next) => {
   console.log('Running video success router');
-  videosInfo = await getTenVideoSubtitlesFromLocalBy(
-    pageIndex,
-    word,
-    categories,
-    language
-  );
-  console.log(videosInfo, word, 'success Router videoInfo');
-  if (videosInfo) {
-    // res.header('Access-Control-Allow-Origin', CLIENT_URL);
-    res.status(200).json({
-      result: 'ok',
-      searched: {
-        word,
-        videosInfo,
-      },
-    });
+  try {
+    videosInfo = await getTenVideoSubtitlesFromLocalBy(
+      pageIndex,
+      word,
+      categories,
+      language
+    );
+    console.log(videosInfo, word, 'success Router videoInfo');
+    if (videosInfo.length !== 0) {
+      // res.header('Access-Control-Allow-Origin', CLIENT_URL);
+      res.status(200).json({
+        result: 'ok',
+        searched: {
+          word,
+          videosInfo,
+        },
+      });
+    }
+  } catch (err) {
+    res.send(err);
   }
 });
 

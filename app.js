@@ -14,12 +14,12 @@ const { CLIENT_URL } = require('./constants');
 
 // Create server
 const app = express();
-
+console.log('CLIENT_URL', CLIENT_URL);
 // Set cors
 app.use(
   cors({
-    origin: CLIENT_URL, // allow to server to accept request from different origin
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    origin: 'https://getsample.letsdoyi.com', // allow to server to accept request from different origin
+    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
     credentials: true, // allow session cookie from browser to pass through
   })
 );

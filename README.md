@@ -5,7 +5,13 @@
 - README 영어버전 [[Link to english version]](https://github.com/letsdoyi/getSample-server/blob/master/README_Eng.md)
 - 데모 비디오 [[Link to demo video]](https://www.youtube.com/watch?v=OFxVRNepHiw)
 
+### Screen Shots
+![](getSample_4Screenshots.png)
+
+### Searching
 ![](getSample_search.gif)
+
+### Social Login and User Wordlists
 ![](getSample_login_and_wordlist.gif)
 
 ## 주요 특징

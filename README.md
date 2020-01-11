@@ -1,20 +1,19 @@
 # getSample (Client and Server)
 
-유튜브를 통해 원어민의 언어 사용 예를 제공하는 어학 어플리케이션
+유튜브를 통해 원어민의 언어 사용례를 제공하는 어학 애플리케이션
 
-- README 영어버전 [[English Version]](https://www.youtube.com/watch?v=OFxVRNepHiw)
+- README 영어버전 [[Link to english version]](https://github.com/letsdoyi/getSample-server/blob/master/README_Eng.md)
 - 데모 비디오 [[Link to demo video]](https://www.youtube.com/watch?v=OFxVRNepHiw)
 
 ![](getSample_4Screenshots.png)
 
 ## 주요 특징
 
-- Google YouTube Data API를 이용한 언어, 카테고리별 영상 자막 검색
-- React Redux, Hooks를 이용한 Timed Text Transcript 구현
-- Words API를 이용한 단어의 정의 동의어 검색(http://rapidapi.com/)
+- YouTube Data API를 이용한 언어, 카테고리별 영상 자막 검색
+- YouTube iframe Player API, React Redux, Hooks을 이용한 Timed Text Transcript
 - MongoDB Atlas를 이용한 사용자별 단어 리스트 관리(저장, 삭제 기능)
 - Google Oauth와 Passport.js를 이용한 구글 소셜 로그인
-- 클라이언트 서버 배포(Netlify, AWS elastic-beanstalk) 및 배포 자동화(CircleCI)
+- 클라이언트, 서버 배포(Netlify, AWS elastic-beanstalk) 및 자동화(CircleCI)
 - Jest와 Enzyme을 사용한 Component, Reducer Unit 테스트
 - Cypress를 사용한 End to End 테스트
 - Git을 이용한 버전 관리

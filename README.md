@@ -140,20 +140,20 @@ GOOGLE_WEB_CLIENT_SECRET = <YOUR CLIENT SECRETE>
 
 - Cypress, JavaScript End-to-End testing framework
 
-## Deployment and Continuous Integration
+## 배포와 배포 자동화
 ### Client:
 - Netlify CI를 통한 배포 자동화
 ### Sever:
 - AWS Elastic Beanstalk(AWS ELB)를 통한 서비스 배포
 - CircleCI를 통한 배포 자동화
 
-## Version and Schedule Control
+## 버전과 일정 관리
 
 - Git, Github [[Previous Git Commit Records Link]](https://github.com/letsdoyi/getSample_git-records)
 
 - Trello for managing scheluled tasks
 
-## Challenges
+## 챌린지
 
 - 사용자 입력정보 받기: 리액트, 리덕스로 state 관리 시, form와 checkbox 다루기
   Form Tag에서 입력 정보들을 submit 시켰을 때 입력된 정보들이 화면에서 모두 지워지는 점을 발견하였습니다. 이것을 해결하기 위해 submit 이벤트가 일어났을 때 입력값은 State로 저장하고 ev.preventDefault()로 정보 리셋을 막았습니다. 그 후 window의 history API를 통해 페이지를 이동시켰습니다.
@@ -193,7 +193,7 @@ GOOGLE_WEB_CLIENT_SECRET = <YOUR CLIENT SECRETE>
     마지막으로 시도한 방법은 서버에 요청하는 구조를 변경하여 시간을 줄이는 것이였습니다. 이전에는 클라이언트에서 검색 post요청을 보낸 후 다시 get요청을 보내 데이터를 받는 구조였지만, 서버에 요청을 한번만 보내는 것으로 변경하여 요청을 한번으로 줄였습니다. 이 과정에서 클라이언트와 서버의 불필요한 요청을 줄일 수 있었고, 서버의 에러 처리 이유를 이해할 수 있었습니다.
 
 
-## Things To do
+## 앞으로 개선하고 싶은 것들
 
 - [ ] 강조된 자막으로 자동 스크롤 기능 추가
 

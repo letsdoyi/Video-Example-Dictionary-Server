@@ -1,12 +1,10 @@
 # getSample (Client and Server)
 
-유튜브를 통해 원어민으 언어 사용 예를 제공하는 어학 어플리케이션
+유튜브를 통해 원어민의 언어 사용 예를 제공하는 어학 어플리케이션
 
-README 영어버전 [[English Version]](https://www.youtube.com/watch?v=OFxVRNepHiw)
-https://youtu.be/1Ow7LTmA76c
+- README 영어버전 [[English Version]](https://www.youtube.com/watch?v=OFxVRNepHiw)
+- 데모 비디오 [[Link to demo video]](https://www.youtube.com/watch?v=OFxVRNepHiw)
 
-데모 비디오 [[Link to demo video]](https://www.youtube.com/watch?v=OFxVRNepHiw)
-https://youtu.be/1Ow7LTmA76c
 ![](getSample_4Screenshots.png)
 
 ## 주요 특징
@@ -182,7 +180,7 @@ GOOGLE_WEB_CLIENT_SECRET = <YOUR CLIENT SECRETE>
 
     시도했던 방법들은 총 4가지가 있습니다.
 
-    첫번째, keep-alive timeout 설정을 활성화 하는 것 두번째, 애플리케이션의 수용력을 늘리거나 idle timeout 한도를 늘리는 것이 있었습니다. idle timeout을 60초에서 180초로 설정하였고 keep-alive timeout설정 또한 185초로 설정하였지만, 비디오 검색 60초 후 504에러가 발생하는 것으로 보아 설정이 적용되지 않은 것으로 판단 하였습니다.
+    keep-alive timeout 설정을 활성화 하는 것, 애플리케이션의 수용력을 늘리거나 idle timeout 한도를 늘리는 것이 있었습니다. idle timeout을 60초에서 180초로 설정하였고 keep-alive timeout설정 또한 185초로 설정하였지만, 비디오 검색 60초 후 504에러가 발생하는 것으로 보아 설정이 적용되지 않은 것으로 판단 하였습니다.
 
     세번째 방법은 서버에서 비디오 정보를 가져오는 걸리는 시간을 줄이기 위해, 검색 범위를 비디오 한 개로 줄여보았지만 에러는 해결되지 않았습니다.
 

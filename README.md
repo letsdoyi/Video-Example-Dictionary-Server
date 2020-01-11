@@ -195,6 +195,8 @@ GOOGLE_WEB_CLIENT_SECRET = <YOUR CLIENT SECRETE>
 
 ## 앞으로 개선하고 싶은 것들
 
+- [ ] 배포 504 Gateway Time-out 에러 해결
+
 - [ ] 강조된 자막으로 자동 스크롤 기능 추가
 
 - [ ] 검색 속도 개선

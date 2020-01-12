@@ -2,7 +2,8 @@
 
 유튜브를 통해 원어민의 언어 사용례를 제공하는 어학 애플리케이션
 
-- README 영어버전 [[Link to english version]](https://github.com/letsdoyi/getSample-server/blob/master/README_Eng.md)
+- README English Version [[Link to english version]](https://github.com/letsdoyi/getSample-client/blob/master/README_Eng.md)
+- 깃 이전 기록 모음 [[Link to Git Records]](https://github.com/letsdoyi/getSample-git-records)
 - 데모 비디오 [[Link to demo video]](https://www.youtube.com/watch?v=OFxVRNepHiw)
 
 ### Screen Shots
@@ -155,15 +156,17 @@ GOOGLE_WEB_CLIENT_SECRET = <YOUR CLIENT SECRETE>
 
 ## 챌린지
 
-- 사용자 입력정보 받기: 리액트, 리덕스로 state 관리 시, form와 checkbox 다루기
+- 사용자 입력정보 받기(리액트, 리덕스): form와 checkbox 다루기
+
   Form Tag에서 입력 정보들을 submit 시켰을 때 입력된 정보들이 화면에서 모두 지워지는 점을 발견하였습니다. 이것을 해결하기 위해 submit 이벤트가 일어났을 때 입력값은 State로 저장하고 ev.preventDefault()로 정보 리셋을 막았습니다. 그 후 window의 history API를 통해 페이지를 이동시켰습니다.
 
   체크박스를 클릭하였을 때 화면에 바로 표시되지 않는 문제가 발생하였습니다. 그 이유는 사용자 입력 정보를 Store에 저장하여 State로 관리 하였기 때문에 계속 새롭게 입력 페이지가 렌더링 되면서 입력 정보가 화면에서 초기상태가 되었기 때문이라고 판단하였습니다. checkbox의 checked 설정에 state로 불리언 값을 가질 수 있도록 checked = {'en' === selected.language} 구문을 추가하여 해결하였습니다.
 
-- 비디오 현재 재생 장면과 자막 싱크 (Video Timed Transcript 구현)
+- 비디오 현재 재생 장면과 자막 싱크: 클로저 이용
+
   전체 자막 리스트에서 현재 재생 중인 장면의 자막을 강조하는 부분을 구현하는 것이 어려운 작업이였습니다. Youtube API를 통해서 가져온 각 자막 정보 종료 시간마다 현재 재생 시간을 State로 업데이트 시켰습니다. 그 후 다시 화면이 렌더링 될 때마다 클로저를 이용하여 현재 재생 시간이 자막 시작과 종료 시점 사이에 있을 경우 그 자막 블럭의 색을 변경하였습니다.
 
-- 배포된 서비스에서 에러 발생
+- 배포된 서비스에서 에러 발생, 여러 시도들
 
   배포 주소 https://getsample.letsdoyi.com/
 
